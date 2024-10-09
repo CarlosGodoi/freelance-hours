@@ -1,11 +1,13 @@
 <?php
 
 namespace Database\Factories;
-use App\Models\User;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Project>
+ */
 class ProjectFactory extends Factory
 {
 
@@ -13,7 +15,7 @@ class ProjectFactory extends Factory
     {
         return [
             'title' => collect(fake()->words(5))->join(' '),
-            'description' => fake()->randomHtml(),
+            'description' => "oi",
             'ends_at' => fake()->dateTimeBetween('now', '+ 3 days'),
             'status' => fake()->randomElement(['open', 'closed']),
             'tech_stack' => fake()->randomElements(['nodejs', 'react', 'javascript', 'vite', 'nextjs'], random_int(1, 5)),
